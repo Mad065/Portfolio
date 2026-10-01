@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <rect width="64" height="64" rx="14" fill="#0d1117"/>
+  <rect x="2" y="2" width="60" height="60" rx="12" stroke="url(#borderGlow)" stroke-width="2"/>
+  <defs>
+    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ef4444"/>
+      <stop offset="50%" stop-color="#8b5cf6"/>
+      <stop offset="100%" stop-color="#3b82f6"/>
+    </linearGradient>
+    <linearGradient id="borderGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ef4444" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#3b82f6" stop-opacity="0.8"/>
+    </linearGradient>
+  </defs>
+  <text x="32" y="39.5" font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="16" font-weight="900" fill="url(#grad)" text-anchor="middle" letter-spacing="0.2">MAD0</text>
+  <circle cx="50" cy="18" r="3" fill="#ef4444"/>
+</svg>

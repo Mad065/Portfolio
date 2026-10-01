@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Página de contacto de José Antonio Martínez Castañón. Correo, teléfono, GitHub, LinkedIn y enlace directo mailto.">
+  <title>Contacto | José Antonio Martínez Castañón</title>
+
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
+</head>
+
+<body>
+
+  <!-- ================= Header / Navbar ================= -->
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="index.html" class="logo" aria-label="Inicio">
+        <span class="logo-badge">MAD0</span>
+        <span class="logo-text">DevPortfolio <span class="logo-dot"></span></span>
+      </a>
+
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-link">Inicio</a></li>
+          <li><a href="index.html#educacion" class="nav-link">Educación</a></li>
+          <li><a href="index.html#habilidades" class="nav-link">Habilidades</a></li>
+          <li><a href="projects.html" class="nav-link">Proyectos</a></li>
+          <li><a href="contact.html" class="nav-link">Contacto</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="assets/CV%20Jos%C3%A9%20Antonio%20Mart%C3%ADnez%20Casta%C3%B1%C3%B3n.pdf"
+          download="CV José Antonio Martínez Castañón.pdf" class="btn-nav-cv action-download-cv"
+          title="Descargar Curriculum Vitae en PDF">
+          <iconify-icon icon="lucide:download" style="font-size: 14px;"></iconify-icon>
+          <span>CV (PDF)</span>
+        </a>
+        <button class="mobile-toggle" aria-label="Abrir Menú de Navegación">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= Contact Section ================= -->
+  <main class="section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">Canales de Comunicación</span>
+        <h1 class="section-title">Ponte en Contacto</h1>
+        <p class="section-desc">
+          ¿Tienes una propuesta, proyecto en mente o consulta profesional? Conéctate conmigo a través de mis canales
+          directos o mediante un correo electrónico.
+        </p>
+      </div>
+
+      <div class="contact-layout">
+        <!-- Columna Izquierda: Tarjetas de Información -->
+        <div class="contact-info-cards reveal">
+
+          <!-- Email Card -->
+          <div class="contact-card">
+            <div class="contact-card-left">
+              <div class="contact-icon">
+                <iconify-icon icon="lucide:mail" style="font-size: 20px; color: var(--accent-red);"></iconify-icon>
+              </div>
+              <div>
+                <span class="contact-label">Correo Electrónico</span>
+                <p class="contact-value">jose.antonio.pepe@icloud.com</p>
+              </div>
+            </div>
+            <button class="btn-copy" data-copy="jose.antonio.pepe@icloud.com">Copiar</button>
+          </div>
+
+          <!-- Phone Card -->
+          <div class="contact-card">
+            <div class="contact-card-left">
+              <div class="contact-icon">
+                <iconify-icon icon="lucide:phone" style="font-size: 20px; color: var(--accent-blue);"></iconify-icon>
+              </div>
+              <div>
+                <span class="contact-label">Teléfono Móvil</span>
+                <p class="contact-value">5530643051</p>
+              </div>
+            </div>
+            <button class="btn-copy" data-copy="5530643051">Copiar</button>
+          </div>
+
+          <!-- GitHub Card -->
+          <a href="https://github.com/Mad065" target="_blank" rel="noopener noreferrer" class="contact-card"
+            style="text-decoration: none;">
+            <div class="contact-card-left">
+              <div class="contact-icon">
+                <iconify-icon icon="simple-icons:github" style="font-size: 20px; color: #c084fc;"></iconify-icon>
+              </div>
+              <div>
+                <span class="contact-label">GitHub</span>
+                <p class="contact-value">github.com/Mad065</p>
+              </div>
+            </div>
+            <span
+              style="font-size: 0.85rem; color: var(--accent-blue); font-family: var(--font-mono); min-width: 60px;">Abrir
+              ↗</span>
+          </a>
+
+          <!-- LinkedIn Card -->
+          <a href="https://www.linkedin.com/in/jose-martinez-0a0034208/" target="_blank" rel="noopener noreferrer"
+            class="contact-card" style="text-decoration: none;">
+            <div class="contact-card-left">
+              <div class="contact-icon">
+                <iconify-icon icon="simple-icons:linkedin" style="font-size: 20px; color: #0a66c2;"></iconify-icon>
+              </div>
+              <div>
+                <span class="contact-label">LinkedIn</span>
+                <p class="contact-value">linkedin.com/in/jose-martinez-0a0034208</p>
+              </div>
+            </div>
+            <span
+              style="font-size: 0.85rem; color: var(--accent-blue); font-family: var(--font-mono); min-width: 60px;">Abrir
+              ↗</span>
+          </a>
+
+          <!-- Location Card -->
+          <div class="contact-card">
+            <div class="contact-card-left">
+              <div class="contact-icon">
+                <iconify-icon icon="lucide:map-pin" style="font-size: 20px; color: var(--accent-cyan);"></iconify-icon>
+              </div>
+              <div>
+                <span class="contact-label">Ubicación</span>
+                <p class="contact-value">Ciudad de México / Estado de México</p>
+              </div>
+            </div>
+            <span class="badge badge-active">Presencial / Remoto</span>
+          </div>
+
+          <!-- CV Download Banner -->
+          <div class="contact-card" style="border-color: rgba(239, 68, 68, 0.3); background: rgba(239, 68, 68, 0.05);">
+            <div class="contact-card-left">
+              <div class="contact-icon">
+                <iconify-icon icon="lucide:file-text" style="font-size: 20px; color: var(--accent-red);"></iconify-icon>
+              </div>
+              <div>
+                <span class="contact-label">Formato Oficial</span>
+                <p class="contact-value">CV José Antonio Martínez Castañón.pdf</p>
+              </div>
+            </div>
+            <a href="assets/CV%20Jos%C3%A9%20Antonio%20Mart%C3%ADnez%20Casta%C3%B1%C3%B3n.pdf"
+              download="CV José Antonio Martínez Castañón.pdf" class="btn btn-outline-red action-download-cv"
+              style="padding: 6px 14px; font-size: 0.8rem;">
+              Descargar
+            </a>
+          </div>
+
+        </div>
+
+        <!-- Columna Derecha: Panel Directo de Mailto -->
+        <div class="contact-mailto-card reveal">
+          <div class="mailto-card-icon">
+            <iconify-icon icon="lucide:mail-plus" style="font-size: 32px; color: var(--accent-red);"></iconify-icon>
+          </div>
+          <h2 class="mailto-title">Iniciemos una conversación</h2>
+          <p class="mailto-desc">
+            ¿Tienes alguna propuesta laboral, proyecto en mente o consulta profesional? Haz clic en el botón para
+            redactar un correo directamente a mi bandeja de entrada personal.
+          </p>
+
+          <a href="mailto:jose.antonio.pepe@icloud.com?subject=Contacto%20desde%20Portfolio&body=Hola%20Jos%C3%A9%20Antonio,%0A%0AMe%20gustar%C3%ADa%20ponerme%20en%20contacto%20contigo%20respecto%20a..."
+            class="btn btn-primary btn-mailto-main">
+            <iconify-icon icon="lucide:send" style="font-size: 18px;"></iconify-icon>
+            <span>Enviar Correo (Mailto)</span>
+          </a>
+
+          <div class="mailto-quick-copy">
+            <span
+              style="font-size: 0.85rem; color: var(--text-secondary); font-family: var(--font-mono); overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">
+              jose.antonio.pepe@icloud.com
+            </span>
+            <button class="btn-copy" data-copy="jose.antonio.pepe@icloud.com">Copiar</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- ================= Footer ================= -->
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <div>
+        <p style="font-weight: 600; color: var(--text-highlight);">José Antonio Martínez Castañón</p>
+        <p style="font-size: 0.82rem;">Estudiante de Ingeniería en Sistemas Computacionales · ESCOM IPN</p>
+      </div>
+      <div class="footer-links">
+        <a href="index.html">Inicio</a>
+        <a href="projects.html">Proyectos</a>
+        <a href="https://github.com/Mad065" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://www.linkedin.com/in/jose-martinez-0a0034208/" target="_blank"
+          rel="noopener noreferrer">LinkedIn</a>
+        <a href="#top" style="color: var(--accent-red);">↑ Arriba</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+
+</html>
