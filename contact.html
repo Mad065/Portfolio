@@ -5,25 +5,36 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description"
-    content="Página de contacto de José Antonio Martínez Castañón. Correo, teléfono, GitHub, LinkedIn y enlace directo mailto.">
+    content="Canales directos de contacto con José Antonio Martínez Castañón — Correo electrónico, teléfono, GitHub, LinkedIn y generador de correo interactivo.">
   <title>Contacto | José Antonio Martínez Castañón</title>
 
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="css/style.css">
+
+  <!-- Iconify & GSAP Animation Engine -->
   <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 </head>
 
 <body>
+  <!-- Accesibilidad: Enlace directo al contenido -->
+  <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+
+  <!-- Foco ambiental interactivo que sigue el cursor en escritorio -->
+  <div class="ambient-spotlight" aria-hidden="true"></div>
 
   <!-- ================= Header / Navbar ================= -->
   <header class="site-header">
     <div class="container nav-container">
       <a href="index.html" class="logo" aria-label="Inicio">
         <span class="logo-badge">MAD0</span>
-        <span class="logo-text">DevPortfolio <span class="logo-dot"></span></span>
+        <span class="logo-text">DevPortfolio <span class="logo-dot" aria-hidden="true"></span></span>
       </a>
 
-      <nav>
+      <nav aria-label="Navegación principal">
         <ul class="nav-menu">
           <li><a href="index.html" class="nav-link">Inicio</a></li>
           <li><a href="index.html#educacion" class="nav-link">Educación</a></li>
@@ -37,97 +48,92 @@
         <a href="assets/CV%20Jos%C3%A9%20Antonio%20Mart%C3%ADnez%20Casta%C3%B1%C3%B3n.pdf"
           download="CV José Antonio Martínez Castañón.pdf" class="btn-nav-cv action-download-cv"
           title="Descargar Curriculum Vitae en PDF">
-          <iconify-icon icon="lucide:download" style="font-size: 14px;"></iconify-icon>
+          <iconify-icon icon="lucide:download" style="font-size: 14px;" aria-hidden="true"></iconify-icon>
           <span>CV (PDF)</span>
         </a>
-        <button class="mobile-toggle" aria-label="Abrir Menú de Navegación">☰</button>
+        <button class="mobile-toggle" aria-label="Abrir Menú de Navegación" aria-expanded="false">☰</button>
       </div>
     </div>
   </header>
 
   <!-- ================= Contact Section ================= -->
-  <main class="section">
+  <main id="main-content" class="section">
     <div class="container">
-      <div class="section-header reveal">
+      <div class="section-header gsap-reveal">
         <span class="section-label">Canales de Comunicación</span>
         <h1 class="section-title">Ponte en Contacto</h1>
         <p class="section-desc">
-          ¿Tienes una propuesta, proyecto en mente o consulta profesional? Conéctate conmigo a través de mis canales
-          directos o mediante un correo electrónico.
+          ¿Tienes una propuesta laboral, proyecto en mente o consulta sobre desarrollo de software? Conéctate de forma directa e inmediata.
         </p>
       </div>
 
       <div class="contact-layout">
-        <!-- Columna Izquierda: Tarjetas de Información -->
-        <div class="contact-info-cards reveal">
+        <!-- Columna Izquierda: Tarjetas de Información Rápida -->
+        <div class="contact-info-cards gsap-reveal">
 
           <!-- Email Card -->
           <div class="contact-card">
             <div class="contact-card-left">
-              <div class="contact-icon">
-                <iconify-icon icon="lucide:mail" style="font-size: 20px; color: var(--accent-red);"></iconify-icon>
+              <div class="contact-icon" style="color: var(--accent-red);">
+                <iconify-icon icon="lucide:mail" style="font-size: 20px;" aria-hidden="true"></iconify-icon>
               </div>
               <div>
                 <span class="contact-label">Correo Electrónico</span>
                 <p class="contact-value">jose.antonio.pepe@icloud.com</p>
               </div>
             </div>
-            <button class="btn-copy" data-copy="jose.antonio.pepe@icloud.com">Copiar</button>
+            <button class="btn-copy" data-copy="jose.antonio.pepe@icloud.com" aria-label="Copiar correo electrónico">Copiar</button>
           </div>
 
           <!-- Phone Card -->
           <div class="contact-card">
             <div class="contact-card-left">
-              <div class="contact-icon">
-                <iconify-icon icon="lucide:phone" style="font-size: 20px; color: var(--accent-blue);"></iconify-icon>
+              <div class="contact-icon" style="color: var(--accent-blue);">
+                <iconify-icon icon="lucide:phone" style="font-size: 20px;" aria-hidden="true"></iconify-icon>
               </div>
               <div>
                 <span class="contact-label">Teléfono Móvil</span>
                 <p class="contact-value">5530643051</p>
               </div>
             </div>
-            <button class="btn-copy" data-copy="5530643051">Copiar</button>
+            <button class="btn-copy" data-copy="5530643051" aria-label="Copiar número de teléfono">Copiar</button>
           </div>
 
           <!-- GitHub Card -->
           <a href="https://github.com/Mad065" target="_blank" rel="noopener noreferrer" class="contact-card"
             style="text-decoration: none;">
             <div class="contact-card-left">
-              <div class="contact-icon">
-                <iconify-icon icon="simple-icons:github" style="font-size: 20px; color: #c084fc;"></iconify-icon>
+              <div class="contact-icon" style="color: #c084fc;">
+                <iconify-icon icon="simple-icons:github" style="font-size: 20px;" aria-hidden="true"></iconify-icon>
               </div>
               <div>
                 <span class="contact-label">GitHub</span>
                 <p class="contact-value">github.com/Mad065</p>
               </div>
             </div>
-            <span
-              style="font-size: 0.85rem; color: var(--accent-blue); font-family: var(--font-mono); min-width: 60px;">Abrir
-              ↗</span>
+            <span style="font-size: 0.85rem; color: var(--accent-blue); font-family: var(--font-mono);">Abrir ↗</span>
           </a>
 
           <!-- LinkedIn Card -->
           <a href="https://www.linkedin.com/in/jose-martinez-0a0034208/" target="_blank" rel="noopener noreferrer"
             class="contact-card" style="text-decoration: none;">
             <div class="contact-card-left">
-              <div class="contact-icon">
-                <iconify-icon icon="simple-icons:linkedin" style="font-size: 20px; color: #0a66c2;"></iconify-icon>
+              <div class="contact-icon" style="color: #0a66c2;">
+                <iconify-icon icon="simple-icons:linkedin" style="font-size: 20px;" aria-hidden="true"></iconify-icon>
               </div>
               <div>
                 <span class="contact-label">LinkedIn</span>
-                <p class="contact-value">linkedin.com/in/jose-martinez-0a0034208</p>
+                <p class="contact-value">jose-martinez-0a0034208</p>
               </div>
             </div>
-            <span
-              style="font-size: 0.85rem; color: var(--accent-blue); font-family: var(--font-mono); min-width: 60px;">Abrir
-              ↗</span>
+            <span style="font-size: 0.85rem; color: var(--accent-blue); font-family: var(--font-mono);">Abrir ↗</span>
           </a>
 
           <!-- Location Card -->
           <div class="contact-card">
             <div class="contact-card-left">
-              <div class="contact-icon">
-                <iconify-icon icon="lucide:map-pin" style="font-size: 20px; color: var(--accent-cyan);"></iconify-icon>
+              <div class="contact-icon" style="color: var(--accent-cyan);">
+                <iconify-icon icon="lucide:map-pin" style="font-size: 20px;" aria-hidden="true"></iconify-icon>
               </div>
               <div>
                 <span class="contact-label">Ubicación</span>
@@ -138,14 +144,14 @@
           </div>
 
           <!-- CV Download Banner -->
-          <div class="contact-card" style="border-color: rgba(239, 68, 68, 0.3); background: rgba(239, 68, 68, 0.05);">
+          <div class="contact-card" style="border-color: rgba(244, 63, 94, 0.35); background: rgba(244, 63, 94, 0.05);">
             <div class="contact-card-left">
-              <div class="contact-icon">
-                <iconify-icon icon="lucide:file-text" style="font-size: 20px; color: var(--accent-red);"></iconify-icon>
+              <div class="contact-icon" style="color: var(--accent-red);">
+                <iconify-icon icon="lucide:file-text" style="font-size: 20px;" aria-hidden="true"></iconify-icon>
               </div>
               <div>
-                <span class="contact-label">Formato Oficial</span>
-                <p class="contact-value">CV José Antonio Martínez Castañón.pdf</p>
+                <span class="contact-label">Curriculum Oficial</span>
+                <p class="contact-value">Formato PDF Completo</p>
               </div>
             </div>
             <a href="assets/CV%20Jos%C3%A9%20Antonio%20Mart%C3%ADnez%20Casta%C3%B1%C3%B3n.pdf"
@@ -157,29 +163,45 @@
 
         </div>
 
-        <!-- Columna Derecha: Panel Directo de Mailto -->
-        <div class="contact-mailto-card reveal">
+        <!-- Columna Derecha: Centro de Mensajería Mailto Interactivo -->
+        <div class="contact-mailto-card gsap-reveal">
           <div class="mailto-card-icon">
-            <iconify-icon icon="lucide:mail-plus" style="font-size: 32px; color: var(--accent-red);"></iconify-icon>
+            <iconify-icon icon="lucide:mail-plus" style="font-size: 32px; color: var(--accent-red);" aria-hidden="true"></iconify-icon>
           </div>
           <h2 class="mailto-title">Iniciemos una conversación</h2>
           <p class="mailto-desc">
-            ¿Tienes alguna propuesta laboral, proyecto en mente o consulta profesional? Haz clic en el botón para
-            redactar un correo directamente a mi bandeja de entrada personal.
+            Selecciona el motivo de tu mensaje a continuación para preparar automáticamente un correo electrónico personalizado en tu cliente de correo preferido:
           </p>
 
-          <a href="mailto:jose.antonio.pepe@icloud.com?subject=Contacto%20desde%20Portfolio&body=Hola%20Jos%C3%A9%20Antonio,%0A%0AMe%20gustar%C3%ADa%20ponerme%20en%20contacto%20contigo%20respecto%20a..."
+          <!-- Selector de Temas Dinámico -->
+          <div class="mailto-topic-selector">
+            <span class="mailto-topic-label">Selecciona el Asunto del Mensaje:</span>
+            <div class="mailto-topics" role="group" aria-label="Temas de contacto">
+              <button class="mailto-topic-btn active" data-topic="job" type="button">
+                💼 Propuesta Laboral
+              </button>
+              <button class="mailto-topic-btn" data-topic="project" type="button">
+                🚀 Proyecto / Freelance
+              </button>
+              <button class="mailto-topic-btn" data-topic="consulting" type="button">
+                🤝 Consulta Técnica
+              </button>
+            </div>
+          </div>
+
+          <!-- Botón de Redacción Directa Mailto -->
+          <a id="main-mailto-btn"
+            href="mailto:jose.antonio.pepe@icloud.com?subject=Propuesta%20Laboral%20%2F%20Oportunidad%20de%20Empleo&body=Hola%20Jos%C3%A9%20Antonio%2C%0A%0AMe%20pongo%20en%20contacto%20contigo%20para%20presentarte%20una%20oportunidad%20profesional%20en%20nuestro%20equipo..."
             class="btn btn-primary btn-mailto-main">
-            <iconify-icon icon="lucide:send" style="font-size: 18px;"></iconify-icon>
-            <span>Enviar Correo</span>
+            <iconify-icon icon="lucide:send" style="font-size: 18px;" aria-hidden="true"></iconify-icon>
+            <span>Redactar Correo Directo</span>
           </a>
 
           <div class="mailto-quick-copy">
-            <span
-              style="font-size: 0.85rem; color: var(--text-secondary); font-family: var(--font-mono); overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">
+            <span style="font-size: 0.85rem; color: var(--text-secondary); font-family: var(--font-mono); overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">
               jose.antonio.pepe@icloud.com
             </span>
-            <button class="btn-copy" data-copy="jose.antonio.pepe@icloud.com">Copiar</button>
+            <button class="btn-copy" data-copy="jose.antonio.pepe@icloud.com" aria-label="Copiar dirección de correo electrónico">Copiar</button>
           </div>
         </div>
 
@@ -191,16 +213,16 @@
   <footer class="site-footer">
     <div class="container footer-content">
       <div>
-        <p style="font-weight: 600; color: var(--text-highlight);">José Antonio Martínez Castañón</p>
-        <p style="font-size: 0.82rem;">Estudiante de Ingeniería en Sistemas Computacionales · ESCOM IPN</p>
+        <p style="font-weight: 700; color: var(--text-highlight); font-size: 0.98rem;">José Antonio Martínez Castañón</p>
+        <p style="font-size: 0.84rem; color: var(--text-muted);">Estudiante de Ingeniería en Sistemas Computacionales · ESCOM IPN</p>
       </div>
       <div class="footer-links">
         <a href="index.html">Inicio</a>
         <a href="projects.html">Proyectos</a>
         <a href="https://github.com/Mad065" target="_blank" rel="noopener noreferrer">GitHub</a>
-        <a href="https://www.linkedin.com/in/jose-martinez-0a0034208/" target="_blank"
-          rel="noopener noreferrer">LinkedIn</a>
-        <a href="#top" style="color: var(--accent-red);">↑ Arriba</a>
+        <a href="https://www.linkedin.com/in/jose-martinez-0a0034208/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="contact.html">Contacto</a>
+        <a href="#main-content" style="color: var(--accent-red);">↑ Arriba</a>
       </div>
     </div>
   </footer>

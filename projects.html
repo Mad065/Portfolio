@@ -5,25 +5,36 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description"
-    content="Proyectos y Experiencia de José Antonio Martínez Castañón: VendorVision, XtrackMachine, EraserBot y certamen Samsung Solve for Tomorrow.">
+    content="Proyectos y experiencia de José Antonio Martínez Castañón: Samsung Innovation Campus, VendorVision, XtrackMachine, EraserBot y certamen Samsung Solve for Tomorrow.">
   <title>Proyectos & Experiencia | José Antonio Martínez Castañón</title>
 
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="css/style.css">
+
+  <!-- Iconify & GSAP Animation Engine -->
   <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 </head>
 
 <body>
+  <!-- Accesibilidad: Enlace directo al contenido -->
+  <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+
+  <!-- Foco ambiental interactivo que sigue el cursor en escritorio -->
+  <div class="ambient-spotlight" aria-hidden="true"></div>
 
   <!-- ================= Header / Navbar ================= -->
   <header class="site-header">
     <div class="container nav-container">
       <a href="index.html" class="logo" aria-label="Inicio">
         <span class="logo-badge">MAD0</span>
-        <span class="logo-text">DevPortfolio <span class="logo-dot"></span></span>
+        <span class="logo-text">DevPortfolio <span class="logo-dot" aria-hidden="true"></span></span>
       </a>
 
-      <nav>
+      <nav aria-label="Navegación principal">
         <ul class="nav-menu">
           <li><a href="index.html" class="nav-link">Inicio</a></li>
           <li><a href="index.html#educacion" class="nav-link">Educación</a></li>
@@ -37,36 +48,35 @@
         <a href="assets/CV%20Jos%C3%A9%20Antonio%20Mart%C3%ADnez%20Casta%C3%B1%C3%B3n.pdf"
           download="CV José Antonio Martínez Castañón.pdf" class="btn-nav-cv action-download-cv"
           title="Descargar Curriculum Vitae en PDF">
-          <iconify-icon icon="lucide:download" style="font-size: 14px;"></iconify-icon>
+          <iconify-icon icon="lucide:download" style="font-size: 14px;" aria-hidden="true"></iconify-icon>
           <span>CV (PDF)</span>
         </a>
-        <button class="mobile-toggle" aria-label="Abrir Menú de Navegación">☰</button>
+        <button class="mobile-toggle" aria-label="Abrir Menú de Navegación" aria-expanded="false">☰</button>
       </div>
     </div>
   </header>
 
   <!-- ================= Proyectos Main ================= -->
-  <main class="section">
+  <main id="main-content" class="section">
     <div class="container">
-      <!-- Page Header -->
-      <div class="section-header reveal">
-        <span class="section-label">Portafolio Técnico</span>
+      <!-- Encabezado de Página -->
+      <div class="section-header gsap-reveal">
+        <span class="section-label">Showcase Técnico</span>
         <h1 class="section-title">Experiencia y Proyectos</h1>
         <p class="section-desc">
-          Desarrollo de plataformas full-stack, ingeniería de sistemas aplicados a la industria e innovaciones asistidas
-          por inteligencia artificial.
+          Plataformas web full-stack, ingeniería de sistemas aplicados a la industria pesada e innovaciones con inteligencia artificial.
         </p>
       </div>
 
-      <!-- Projects Grid -->
+      <!-- Cuadrícula Bento de Proyectos -->
       <div class="projects-grid">
 
         <!-- Proyecto 1: VendorVision -->
-        <article class="project-card reveal">
+        <article class="project-card gsap-reveal">
           <div>
             <div class="project-top">
               <div class="project-icon">
-                <iconify-icon icon="lucide:store" style="font-size: 22px; color: var(--accent-red);"></iconify-icon>
+                <iconify-icon icon="lucide:store" style="font-size: 24px; color: var(--accent-red);" aria-hidden="true"></iconify-icon>
               </div>
               <span class="project-year">2024 – 2025</span>
             </div>
@@ -74,23 +84,19 @@
             <h2 class="project-title">VendorVision</h2>
             <p class="project-tagline">Plataforma Web de Gestión de Negocios Locales</p>
 
-            <p
-              style="font-size: 0.84rem; color: var(--text-muted); margin-bottom: 14px; font-family: var(--font-mono);">
+            <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 16px; font-family: var(--font-mono);">
               📍 Ciudad de México, México
             </p>
 
             <ul class="project-bullet-list">
               <li>
-                Desarrollé una plataforma web integral orientada a la gestión de negocios locales, conectando a gerentes
-                y proveedores en tiempo real dentro de un entorno unificado y colaborativo.
+                Desarrollé una <strong>plataforma web integral</strong> que conecta a gerentes y proveedores en tiempo real dentro de un entorno unificado y colaborativo.
               </li>
               <li>
-                Implementé funcionalidades avanzadas para el control de inventario, registro de ventas, compras e
-                inversiones por producto.
+                Implementé módulos para el <strong>control de inventario, registro de ventas, compras e inversiones</strong> por producto con sincronización continua.
               </li>
               <li>
-                Diseñé módulos generadores de estadísticas de rendimiento y métricas clave orientadas a mitigar pérdidas
-                económicas y optimizar la toma de decisiones.
+                Diseñé algoritmos generadores de <strong>estadísticas y métricas de rendimiento comercial</strong> para mitigar pérdidas económicas y optimizar la toma de decisiones.
               </li>
             </ul>
           </div>
@@ -100,18 +106,25 @@
               <span class="project-tag">Gestión Web</span>
               <span class="project-tag">Tiempo Real</span>
               <span class="project-tag">Inventario & Ventas</span>
-              <span class="project-tag">Analítica de Negocios</span>
+              <span class="project-tag">Analítica</span>
               <span class="project-tag">Full Stack</span>
+            </div>
+
+            <div class="project-actions">
+              <a href="https://github.com/Mad065" target="_blank" rel="noopener noreferrer" class="btn-project-github">
+                <iconify-icon icon="simple-icons:github" style="font-size: 15px;" aria-hidden="true"></iconify-icon>
+                <span>Ver Código en GitHub ↗</span>
+              </a>
             </div>
           </div>
         </article>
 
         <!-- Proyecto 2: XtrackMachine -->
-        <article class="project-card reveal">
+        <article class="project-card gsap-reveal">
           <div>
             <div class="project-top">
               <div class="project-icon blue-accent">
-                <iconify-icon icon="lucide:cpu" style="font-size: 22px; color: var(--accent-blue);"></iconify-icon>
+                <iconify-icon icon="lucide:cpu" style="font-size: 24px; color: var(--accent-blue);" aria-hidden="true"></iconify-icon>
               </div>
               <span class="project-year">2025</span>
             </div>
@@ -119,22 +132,19 @@
             <h2 class="project-title">XtrackMachine</h2>
             <p class="project-tagline">Sistema de Mantenimiento Industrial</p>
 
-            <p
-              style="font-size: 0.84rem; color: var(--text-muted); margin-bottom: 14px; font-family: var(--font-mono);">
+            <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 16px; font-family: var(--font-mono);">
               📍 Ciudad de México, México
             </p>
 
             <ul class="project-bullet-list">
               <li>
-                Diseñé e implementé un sistema de limpieza para fresadoras de alta precisión, garantizando que el equipo
-                preserve condiciones mecánicas y operativas óptimas.
+                Diseñé e implementé un <strong>sistema de limpieza para fresadoras de alta precisión</strong>, preservando el equipo en condiciones mecánicas y operativas óptimas.
               </li>
               <li>
-                Optimicé el proceso operativo general en planta, disminuyendo significativamente los tiempos de
-                inactividad por mantenimiento preventivo y correctivo.
+                Optimicé el flujo operativo de planta, <strong>disminuyendo significativamente los tiempos de mantenimiento</strong> correctivo y preventivo.
               </li>
               <li>
-                Contribuyó directamente a extender la vida útil y la fiabilidad de la maquinaria industrial pesada.
+                Contribuyó directamente a <strong>extender la vida útil y confiabilidad</strong> de la maquinaria industrial en jornadas continuas.
               </li>
             </ul>
           </div>
@@ -143,15 +153,13 @@
             <div class="project-tags">
               <span class="project-tag">Automatización Industrial</span>
               <span class="project-tag">Fresadoras de Precisión</span>
-              <span class="project-tag">Optimización de Procesos</span>
-              <span class="project-tag">Mantenimiento Predictivo</span>
+              <span class="project-tag">Optimización Operativa</span>
+              <span class="project-tag">Mantenimiento Preventivo</span>
             </div>
 
             <div class="project-actions">
-              <!-- Reemplaza con el link específico de tu repositorio si aplica -->
-              <a href="https://github.com/Mad065/XtrackMachine" target="_blank" rel="noopener noreferrer"
-                class="btn-project-github">
-                <iconify-icon icon="simple-icons:github" style="font-size: 15px;"></iconify-icon>
+              <a href="https://github.com/Mad065" target="_blank" rel="noopener noreferrer" class="btn-project-github">
+                <iconify-icon icon="simple-icons:github" style="font-size: 15px;" aria-hidden="true"></iconify-icon>
                 <span>Ver Código en GitHub ↗</span>
               </a>
             </div>
@@ -159,11 +167,11 @@
         </article>
 
         <!-- Proyecto 3: EraserBot -->
-        <article class="project-card reveal">
+        <article class="project-card gsap-reveal">
           <div>
             <div class="project-top">
               <div class="project-icon purple-accent">
-                <iconify-icon icon="lucide:bot" style="font-size: 22px; color: #c084fc;"></iconify-icon>
+                <iconify-icon icon="lucide:bot" style="font-size: 24px; color: #c084fc;" aria-hidden="true"></iconify-icon>
               </div>
               <span class="project-year">2025</span>
             </div>
@@ -171,23 +179,19 @@
             <h2 class="project-title">EraserBot</h2>
             <p class="project-tagline">Pizarrón Inteligente Asistido por IA</p>
 
-            <p
-              style="font-size: 0.84rem; color: var(--text-muted); margin-bottom: 14px; font-family: var(--font-mono);">
+            <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 16px; font-family: var(--font-mono);">
               📍 Ciudad de México, México
             </p>
 
             <ul class="project-bullet-list">
               <li>
-                Desarrollé un sistema de pizarrón inteligente concebido para modernizar aulas tradicionales e impulsar
-                entornos educativos de alta tecnología.
+                Desarrollé un <strong>sistema de pizarrón inteligente</strong> orientado a modernizar aulas tradicionales e impulsar dinámicas de enseñanza interactiva.
               </li>
               <li>
-                Facilité la interacción dinámica y eficiente docente-alumno mediante capacidades asistidas por modelos
-                de inteligencia artificial.
+                Facilité la interacción docente-alumno mediante capacidades integradas de <strong>procesamiento e inteligencia artificial</strong>.
               </li>
               <li>
-                Integré automatización para el borrado inteligente del pizarrón y mecanismos de captura digital y
-                optimizada de apuntes durante las sesiones de clase.
+                Automaticé el <strong>borrado inteligente de superficies y la captura optimizada de notas</strong> y diagramas durante las sesiones de clase.
               </li>
             </ul>
           </div>
@@ -195,16 +199,14 @@
           <div>
             <div class="project-tags">
               <span class="project-tag">Inteligencia Artificial</span>
-              <span class="project-tag">EdTech / Aulas Inteligentes</span>
+              <span class="project-tag">EdTech</span>
               <span class="project-tag">Captura Optimizada</span>
               <span class="project-tag">Hardware + Software</span>
             </div>
 
             <div class="project-actions">
-              <!-- Reemplaza con el link específico de tu repositorio si aplica -->
-              <a href="https://github.com/Mad065/EraserBot" target="_blank" rel="noopener noreferrer"
-                class="btn-project-github">
-                <iconify-icon icon="simple-icons:github" style="font-size: 15px;"></iconify-icon>
+              <a href="https://github.com/Mad065" target="_blank" rel="noopener noreferrer" class="btn-project-github">
+                <iconify-icon icon="simple-icons:github" style="font-size: 15px;" aria-hidden="true"></iconify-icon>
                 <span>Ver Código en GitHub ↗</span>
               </a>
             </div>
@@ -213,60 +215,127 @@
 
       </div>
 
-      <!-- ================= Liderazgo y Actividades ================= -->
-      <section style="margin-top: 60px;">
-        <div class="section-header reveal">
-          <span class="section-label">Certámenes y Reconocimientos</span>
-          <h2 class="section-title">Liderazgo y Actividades</h2>
+      <!-- ================= Liderazgo y Certámenes ================= -->
+      <section style="margin-top: 70px;">
+        <div class="section-header gsap-reveal">
+          <span class="section-label">Certámenes & Reconocimientos</span>
+          <h2 class="section-title">Liderazgo y Reconocimientos</h2>
+          <p class="section-desc">
+            Participación seleccionada en programas globales de innovación tecnológica, inteligencia artificial y resolución de problemáticas sociales.
+          </p>
         </div>
 
-        <div class="leadership-banner reveal">
-          <div class="leadership-header">
-            <div>
-              <div class="leadership-award-title">
-                <iconify-icon icon="lucide:star" style="font-size: 20px; color: #fbbf24;"></iconify-icon>
-                <span>Samsung Solve for Tomorrow 2024</span>
+        <div class="leadership-stack">
+
+          <!-- Reconocimiento 1: Samsung Innovation Campus (Actualmente en curso) -->
+          <div class="leadership-banner active-program gsap-reveal">
+            <div class="leadership-header">
+              <div>
+                <div class="leadership-award-title">
+                  <iconify-icon icon="simple-icons:samsung" style="font-size: 26px; color: #38bdf8;" aria-hidden="true"></iconify-icon>
+                  <span>Samsung Innovation Campus</span>
+                </div>
+                <p class="leadership-role" style="color: #6ee7b7;">
+                  Participante Seleccionado · Inteligencia Artificial, Machine Learning & Big Data
+                </p>
+                <p style="font-size: 0.85rem; color: var(--text-muted); font-family: var(--font-mono); margin-top: 4px;">
+                  📍 Samsung Electronics México · Alianza Académica con UDEM y Certificación CENEVAL
+                </p>
               </div>
-              <p class="leadership-role">Participante Seleccionado · 2024</p>
-              <p style="font-size: 0.85rem; color: var(--text-muted); font-family: var(--font-mono); margin-top: 4px;">
-                📍 Ciudad de México, México
-              </p>
+              <div style="display: flex; gap: 8px; align-items: center; flex-wrap: wrap;">
+                <span class="badge badge-active" style="font-size: 0.84rem; padding: 6px 14px;">
+                  <span class="logo-dot" style="width: 6px; height: 6px;" aria-hidden="true"></span>
+                  Actualmente en curso · 2026 – 2027
+                </span>
+              </div>
             </div>
-            <span class="badge badge-done" style="font-size: 0.85rem; padding: 6px 14px;">Innovación Tecnológica</span>
+
+            <ul class="project-bullet-list" style="margin-bottom: 22px;">
+              <li>
+                Seleccionado en el programa global de educación tecnológica de <strong>Samsung</strong>, orientado a capacitar a jóvenes talentos en las tecnologías clave de la 4ta Revolución Industrial: <strong>Inteligencia Artificial, Deep Learning, Machine Learning y programación avanzada en Python</strong>.
+              </li>
+              <li>
+                Desarrollo activo del <strong>Proyecto Capstone integrador de IA</strong> enfocado en resolver problemáticas sociales e industriales reales mediante modelado predictivo, procesamiento de grandes volúmenes de datos y despliegue de soluciones tecnológicas de vanguardia.
+              </li>
+              <li>
+                Formación integral en <strong>competencias sociolaborales y liderazgo de proyectos</strong> (resolución analítica de problemas complejos, metodologías ágiles y colaboración de alto desempeño), avalada con valor curricular por la <strong>UDEM</strong> y acreditada formalmente por <strong>CENEVAL</strong>.
+              </li>
+            </ul>
+
+            <div class="skill-chips" style="margin-bottom: 22px;">
+              <span class="skill-chip">Inteligencia Artificial</span>
+              <span class="skill-chip">Deep Learning & ML</span>
+              <span class="skill-chip">Python Avanzado</span>
+              <span class="skill-chip">Big Data</span>
+              <span class="skill-chip">Proyecto Capstone</span>
+              <span class="skill-chip">Resolución de Problemas Complejos</span>
+              <span class="skill-chip">Acreditación CENEVAL / UDEM</span>
+            </div>
+
+            <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; padding-top: 18px; border-top: 1px solid var(--border-subtle);">
+              <a href="https://www.samsung.com/mx/news/sustainability/samsung-innovation-campus-mexico/" target="_blank" rel="noopener noreferrer" class="btn-project-github">
+                <iconify-icon icon="lucide:external-link" style="font-size: 15px;" aria-hidden="true"></iconify-icon>
+                <span>Conocer el Programa Oficial ↗</span>
+              </a>
+              <span style="font-size: 0.85rem; color: var(--accent-emerald); font-family: var(--font-mono); display: inline-flex; align-items: center; gap: 6px;">
+                <iconify-icon icon="lucide:calendar-clock" style="font-size: 16px;" aria-hidden="true"></iconify-icon>
+                <span>Conclusión programada: 25 de enero de 2027</span>
+              </span>
+            </div>
           </div>
 
-          <ul class="project-bullet-list" style="margin-bottom: 20px;">
-            <li>
-              Participé en el prestigioso certamen de innovación y emprendimiento tecnológico <strong>Samsung Solve for
-                Tomorrow 2024</strong>, aplicando competencias de ingeniería para solucionar problemáticas sociales
-              prioritarias.
-            </li>
-            <li>
-              Lideré y colaboré activamente en la conceptualización de ideas, formulación de la propuesta técnica y
-              desarrollo de soluciones fundadas en ciencia, tecnología, ingeniería y matemáticas (STEM).
-            </li>
-          </ul>
+          <!-- Reconocimiento 2: Samsung Solve for Tomorrow 2024 -->
+          <div class="leadership-banner gsap-reveal">
+            <div class="leadership-header">
+              <div>
+                <div class="leadership-award-title">
+                  <iconify-icon icon="lucide:star" style="font-size: 22px; color: #fbbf24;" aria-hidden="true"></iconify-icon>
+                  <span>Samsung Solve for Tomorrow 2024</span>
+                </div>
+                <p class="leadership-role">Participante Seleccionado · 2024</p>
+                <p style="font-size: 0.85rem; color: var(--text-muted); font-family: var(--font-mono); margin-top: 4px;">
+                  📍 Ciudad de México, México
+                </p>
+              </div>
+              <span class="badge badge-done" style="font-size: 0.84rem; padding: 6px 14px;">Innovación Tecnológica STEM</span>
+            </div>
 
-          <div class="skill-chips">
-            <span class="skill-chip">Liderazgo de Proyectos</span>
-            <span class="skill-chip">Innovación Social</span>
-            <span class="skill-chip">Resolución de Problemas Complejos</span>
-            <span class="skill-chip">STEM</span>
+            <ul class="project-bullet-list" style="margin-bottom: 22px;">
+              <li>
+                Participé en el certamen de innovación y emprendimiento tecnológico <strong>Samsung Solve for Tomorrow 2024</strong>, aplicando competencias de ingeniería en sistemas para resolver problemáticas sociales de alto impacto.
+              </li>
+              <li>
+                Lideré y colaboré activamente en la <strong>conceptualización, formulación técnica y desarrollo</strong> de soluciones fundadas en ciencia, tecnología, ingeniería y matemáticas (STEM).
+              </li>
+            </ul>
+
+            <div class="skill-chips">
+              <span class="skill-chip">Liderazgo de Proyectos</span>
+              <span class="skill-chip">Innovación Social</span>
+              <span class="skill-chip">Resolución de Problemas Complejos</span>
+              <span class="skill-chip">STEM</span>
+            </div>
           </div>
+
         </div>
       </section>
 
-      <!-- Bottom CTA to Contact -->
-      <div style="text-align: center; margin-top: 60px;" class="reveal">
-        <h3 style="font-size: 1.4rem; color: var(--text-highlight); margin-bottom: 12px;">¿Te gustaría colaborar o saber
-          más?</h3>
-        <p style="color: var(--text-secondary); margin-bottom: 24px;">Estoy disponible para proyectos, desarrollo de
-          software y consultas profesionales.</p>
-        <div style="display: flex; justify-content: center; gap: 16px; flex-wrap: wrap;">
-          <a href="contact.html" class="btn btn-primary">Ponerse en Contacto</a>
+      <!-- Bottom Call to Action -->
+      <div style="text-align: center; margin-top: 65px;" class="gsap-reveal">
+        <h3 style="font-size: 1.5rem; color: var(--text-highlight); margin-bottom: 12px; font-weight: 700;">¿Interesado en una colaboración técnica?</h3>
+        <p style="color: var(--text-secondary); margin-bottom: 24px; max-width: 580px; margin-left: auto; margin-right: auto;">
+          Disponible para proyectos de desarrollo de software, pasantías y consultas profesionales en ingeniería de sistemas.
+        </p>
+        <div style="display: flex; justify-content: center; gap: 14px; flex-wrap: wrap;">
+          <a href="contact.html" class="btn btn-primary">
+            <span>Iniciar Contacto</span>
+            <iconify-icon icon="lucide:mail" style="font-size: 16px;" aria-hidden="true"></iconify-icon>
+          </a>
           <a href="assets/CV%20Jos%C3%A9%20Antonio%20Mart%C3%ADnez%20Casta%C3%B1%C3%B3n.pdf"
-            download="CV José Antonio Martínez Castañón.pdf" class="btn btn-secondary action-download-cv">Descargar
-            Curriculum (PDF)</a>
+            download="CV José Antonio Martínez Castañón.pdf" class="btn btn-secondary action-download-cv">
+            <iconify-icon icon="lucide:download" style="font-size: 16px;" aria-hidden="true"></iconify-icon>
+            <span>Descargar Curriculum (PDF)</span>
+          </a>
         </div>
       </div>
 
@@ -277,16 +346,16 @@
   <footer class="site-footer">
     <div class="container footer-content">
       <div>
-        <p style="font-weight: 600; color: var(--text-highlight);">José Antonio Martínez Castañón</p>
-        <p style="font-size: 0.82rem;">Estudiante de Ingeniería en Sistemas Computacionales · ESCOM IPN</p>
+        <p style="font-weight: 700; color: var(--text-highlight); font-size: 0.98rem;">José Antonio Martínez Castañón</p>
+        <p style="font-size: 0.84rem; color: var(--text-muted);">Estudiante de Ingeniería en Sistemas Computacionales · ESCOM IPN</p>
       </div>
       <div class="footer-links">
         <a href="index.html">Inicio</a>
+        <a href="projects.html">Proyectos</a>
         <a href="https://github.com/Mad065" target="_blank" rel="noopener noreferrer">GitHub</a>
-        <a href="https://www.linkedin.com/in/jose-martinez-0a0034208/" target="_blank"
-          rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://www.linkedin.com/in/jose-martinez-0a0034208/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
         <a href="contact.html">Contacto</a>
-        <a href="#top" style="color: var(--accent-red);">↑ Arriba</a>
+        <a href="#main-content" style="color: var(--accent-red);">↑ Arriba</a>
       </div>
     </div>
   </footer>

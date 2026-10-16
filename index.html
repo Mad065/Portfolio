@@ -5,25 +5,36 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description"
-    content="Portfolio y Curriculum Vitae de José Antonio Martínez Castañón - Estudiante de Ingeniería en Sistemas Computacionales en ESCOM-IPN y Técnico en Programación.">
+    content="Portfolio profesional y Curriculum Vitae de José Antonio Martínez Castañón — Estudiante de Ingeniería en Sistemas Computacionales en ESCOM-IPN y Técnico en Programación de CECyT 9 Bátiz.">
   <title>José Antonio Martínez Castañón | Portfolio & CV</title>
 
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="css/style.css">
+
+  <!-- Iconify & GSAP Animation Engine -->
   <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 </head>
 
 <body>
+  <!-- Accesibilidad: Enlace directo al contenido -->
+  <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+
+  <!-- Foco ambiental interactivo que sigue el cursor en escritorio -->
+  <div class="ambient-spotlight" aria-hidden="true"></div>
 
   <!-- ================= Header / Navbar ================= -->
   <header class="site-header">
     <div class="container nav-container">
       <a href="index.html" class="logo" aria-label="Inicio">
         <span class="logo-badge">MAD0</span>
-        <span class="logo-text">DevPortfolio <span class="logo-dot"></span></span>
+        <span class="logo-text">DevPortfolio <span class="logo-dot" aria-hidden="true"></span></span>
       </a>
 
-      <nav>
+      <nav aria-label="Navegación principal">
         <ul class="nav-menu">
           <li><a href="index.html" class="nav-link">Inicio</a></li>
           <li><a href="index.html#educacion" class="nav-link">Educación</a></li>
@@ -37,237 +48,348 @@
         <a href="assets/CV%20Jos%C3%A9%20Antonio%20Mart%C3%ADnez%20Casta%C3%B1%C3%B3n.pdf"
           download="CV José Antonio Martínez Castañón.pdf" class="btn-nav-cv action-download-cv"
           title="Descargar Curriculum Vitae en PDF">
-          <iconify-icon icon="lucide:download" style="font-size: 14px;"></iconify-icon>
+          <iconify-icon icon="lucide:download" style="font-size: 14px;" aria-hidden="true"></iconify-icon>
           <span>CV (PDF)</span>
         </a>
-        <button class="mobile-toggle" aria-label="Abrir Menú de Navegación">☰</button>
+        <button class="mobile-toggle" aria-label="Abrir Menú de Navegación" aria-expanded="false">☰</button>
       </div>
     </div>
   </header>
 
-  <!-- ================= Hero Section ================= -->
-  <main>
+  <!-- ================= Hero Section (2-Column Architecture) ================= -->
+  <main id="main-content">
     <section class="hero">
       <div class="container">
-        <div class="hero-content reveal">
-          <div class="terminal-tag">
-            <span class="terminal-status-dot"></span>
-            <span>ESCOM-IPN · Ingeniería en Sistemas Computacionales</span>
-          </div>
-
-          <h1 class="hero-title">
-            Hola, soy <br>
-            <span class="hero-name-gradient">José Antonio Martínez Castañón</span>
-          </h1>
-
-          <p class="hero-subtitle">
-            <span>Técnico en Programación</span>
-            <span style="color: var(--accent-red);">•</span>
-            <span class="highlight-escom">Futuro Ingeniero en Sistemas Computacionales</span>
-          </p>
-
-          <p class="hero-description">
-            Especializado en el desarrollo de software eficiente, aplicaciones web y soluciones impulsadas por
-            tecnología e inteligencia artificial. Comprometido con la innovación técnica, el trabajo en equipo y la
-            resolución de problemas de alto impacto.
-          </p>
-
-          <!-- Badges de Contacto Rápido -->
-          <div class="hero-meta-badges">
-            <div class="meta-chip">
-              <iconify-icon icon="lucide:map-pin" style="font-size: 16px; color: var(--accent-blue);"></iconify-icon>
-              <span>Ciudad de México/Estado de México</span>
+        <div class="hero-grid">
+          
+          <!-- Columna Izquierda: Información Principal -->
+          <div class="hero-content">
+            <div class="terminal-tag">
+              <span class="terminal-status-dot" aria-hidden="true"></span>
+              <span>ESCOM-IPN · Ingeniería en Sistemas Computacionales</span>
             </div>
 
-            <div class="meta-chip">
-              <iconify-icon icon="lucide:phone" style="font-size: 16px; color: var(--accent-blue);"></iconify-icon>
-              <span>5530643051</span>
-              <button class="btn-copy" data-copy="5530643051"
-                style="padding: 2px 6px; font-size: 0.72rem; margin-left: 4px;">Copiar</button>
+            <h1 class="hero-title">
+              Hola, soy <br>
+              <span class="hero-name-gradient">José Antonio Martínez Castañón</span>
+            </h1>
+
+            <p class="hero-subtitle">
+              <span>Técnico en Programación</span>
+              <span style="color: var(--accent-red);" aria-hidden="true">•</span>
+              <span class="highlight-escom">Futuro Ingeniero en Sistemas Computacionales</span>
+            </p>
+
+            <p class="hero-description">
+              Especializado en el desarrollo de software escalable, plataformas web en tiempo real y soluciones asistidas por inteligencia artificial y automatización industrial. Con un enfoque riguroso en calidad de código, resolución de problemas complejos y trabajo en equipo.
+            </p>
+
+            <!-- Badges de Contacto Rápido -->
+            <div class="hero-meta-badges">
+              <div class="meta-chip">
+                <iconify-icon icon="lucide:map-pin" style="font-size: 16px; color: var(--accent-blue);" aria-hidden="true"></iconify-icon>
+                <span>Ciudad de México / Estado de México</span>
+              </div>
+
+              <div class="meta-chip">
+                <iconify-icon icon="lucide:phone" style="font-size: 16px; color: var(--accent-blue);" aria-hidden="true"></iconify-icon>
+                <span>5530643051</span>
+                <button class="btn-copy" data-copy="5530643051" aria-label="Copiar número de teléfono"
+                  style="padding: 2px 8px; font-size: 0.72rem; margin-left: 4px;">Copiar</button>
+              </div>
+
+              <div class="meta-chip">
+                <iconify-icon icon="lucide:mail" style="font-size: 16px; color: var(--accent-blue);" aria-hidden="true"></iconify-icon>
+                <span>jose.antonio.pepe@icloud.com</span>
+                <button class="btn-copy" data-copy="jose.antonio.pepe@icloud.com" aria-label="Copiar correo electrónico"
+                  style="padding: 2px 8px; font-size: 0.72rem; margin-left: 4px;">Copiar</button>
+              </div>
+
+              <a href="https://github.com/Mad065" target="_blank" rel="noopener noreferrer" class="meta-chip meta-chip-link"
+                style="color: #60a5fa;">
+                <iconify-icon icon="simple-icons:github" style="font-size: 16px;" aria-hidden="true"></iconify-icon>
+                <span>github.com/Mad065 ↗</span>
+              </a>
+
+              <a href="https://www.linkedin.com/in/jose-martinez-0a0034208/" target="_blank" rel="noopener noreferrer"
+                class="meta-chip meta-chip-link" style="color: #60a5fa;">
+                <iconify-icon icon="simple-icons:linkedin" style="font-size: 16px; color: #0a66c2;" aria-hidden="true"></iconify-icon>
+                <span>LinkedIn ↗</span>
+              </a>
             </div>
 
-            <div class="meta-chip">
-              <iconify-icon icon="lucide:mail" style="font-size: 16px; color: var(--accent-blue);"></iconify-icon>
-              <span>jose.antonio.pepe@icloud.com</span>
-              <button class="btn-copy" data-copy="jose.antonio.pepe@icloud.com"
-                style="padding: 2px 6px; font-size: 0.72rem; margin-left: 4px;">Copiar</button>
+            <!-- CTAs Principales -->
+            <div class="hero-cta">
+              <a href="projects.html" class="btn btn-primary">
+                <span>Explorar Proyectos</span>
+                <iconify-icon icon="lucide:arrow-right" style="font-size: 16px;" aria-hidden="true"></iconify-icon>
+              </a>
+
+              <a href="assets/CV%20Jos%C3%A9%20Antonio%20Mart%C3%ADnez%20Casta%C3%B1%C3%B3n.pdf"
+                download="CV José Antonio Martínez Castañón.pdf" class="btn btn-secondary action-download-cv">
+                <iconify-icon icon="lucide:file-text" style="font-size: 16px;" aria-hidden="true"></iconify-icon>
+                <span>Descargar Curriculum (PDF)</span>
+              </a>
+
+              <a href="contact.html" class="btn btn-outline-blue">
+                <span>Contactar</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Columna Derecha: Consola Técnica Interactiva (Engineering HUD) -->
+          <div class="hero-console-card">
+            <div class="console-header">
+              <div class="console-dots">
+                <span class="console-dot red" aria-hidden="true"></span>
+                <span class="console-dot yellow" aria-hidden="true"></span>
+                <span class="console-dot green" aria-hidden="true"></span>
+              </div>
+              <span class="console-branch">
+                <iconify-icon icon="lucide:git-branch" style="font-size: 13px;" aria-hidden="true"></iconify-icon>
+                main: systems-engineer.json
+              </span>
             </div>
 
-            <a href="https://github.com/Mad065" target="_blank" rel="noopener noreferrer" class="meta-chip"
-              style="color: #60a5fa;">
-              <iconify-icon icon="simple-icons:github" style="font-size: 16px;"></iconify-icon>
-              <span>github.com/Mad065 ↗</span>
-            </a>
+            <!-- Pestañas de la consola -->
+            <div class="console-nav-tabs">
+              <button class="console-tab-btn active" data-tab="tab-json" type="button">
+                <iconify-icon icon="lucide:file-code-2" style="font-size: 13px;" aria-hidden="true"></iconify-icon>
+                status.json
+              </button>
+              <button class="console-tab-btn" data-tab="tab-terminal" type="button">
+                <iconify-icon icon="lucide:terminal" style="font-size: 13px;" aria-hidden="true"></iconify-icon>
+                terminal.sh
+              </button>
+            </div>
 
-            <a href="https://www.linkedin.com/in/jose-martinez-0a0034208/" target="_blank" rel="noopener noreferrer"
-              class="meta-chip" style="color: #60a5fa;">
-              <iconify-icon icon="simple-icons:linkedin" style="font-size: 16px; color: #0a66c2;"></iconify-icon>
-              <span>linkedin.com/in/jose-martinez-0a0034208 ↗</span>
-            </a>
+            <!-- Contenido de las pestañas -->
+            <div class="console-body">
+              <!-- Tab 1: status.json -->
+              <div id="tab-json" class="console-tab-pane active">
+                <div class="code-line"><span class="code-num">1</span><span class="code-content">{</span></div>
+                <div class="code-line"><span class="code-num">2</span><span class="code-content">&nbsp;&nbsp;<span class="c-key">"developer"</span>: <span class="c-str">"José Antonio Martínez Castañón"</span>,</span></div>
+                <div class="code-line"><span class="code-num">3</span><span class="code-content">&nbsp;&nbsp;<span class="c-key">"education"</span>: {</span></div>
+                <div class="code-line"><span class="code-num">4</span><span class="code-content">&nbsp;&nbsp;&nbsp;&nbsp;<span class="c-key">"university"</span>: <span class="c-str">"ESCOM - IPN"</span>,</span></div>
+                <div class="code-line"><span class="code-num">5</span><span class="code-content">&nbsp;&nbsp;&nbsp;&nbsp;<span class="c-key">"degree"</span>: <span class="c-str">"Ing. en Sistemas Computacionales"</span>,</span></div>
+                <div class="code-line"><span class="code-num">6</span><span class="code-content">&nbsp;&nbsp;&nbsp;&nbsp;<span class="c-key">"technical_highschool"</span>: <span class="c-str">"CECyT 9 Juan de Dios Bátiz"</span></span></div>
+                <div class="code-line"><span class="code-num">7</span><span class="code-content">&nbsp;&nbsp;},</span></div>
+                <div class="code-line"><span class="code-num">8</span><span class="code-content">&nbsp;&nbsp;<span class="c-key">"leadership_and_honors"</span>: [</span></div>
+                <div class="code-line"><span class="code-num">9</span><span class="code-content">&nbsp;&nbsp;&nbsp;&nbsp;<span class="c-str">"Samsung Innovation Campus 2026-2027"</span>,</span></div>
+                <div class="code-line"><span class="code-num">10</span><span class="code-content">&nbsp;&nbsp;&nbsp;&nbsp;<span class="c-str">"Samsung Solve for Tomorrow 2024"</span></span></div>
+                <div class="code-line"><span class="code-num">11</span><span class="code-content">&nbsp;&nbsp;],</span></div>
+                <div class="code-line"><span class="code-num">12</span><span class="code-content">&nbsp;&nbsp;<span class="c-key">"core_stack"</span>: [<span class="c-str">"Java"</span>, <span class="c-str">"Python"</span>, <span class="c-str">"C/C++"</span>, <span class="c-str">"Node.js"</span>],</span></div>
+                <div class="code-line"><span class="code-num">13</span><span class="code-content">&nbsp;&nbsp;<span class="c-key">"available_for_hire"</span>: <span class="c-bool">true</span></span></div>
+                <div class="code-line"><span class="code-num">14</span><span class="code-content">}</span></div>
+              </div>
+
+              <!-- Tab 2: terminal.sh -->
+              <div id="tab-terminal" class="console-tab-pane">
+                <div class="code-line"><span class="code-num">1</span><span class="code-content"><span class="c-comment"># Verificar entorno de ejecución</span></span></div>
+                <div class="code-line"><span class="code-num">2</span><span class="code-content"><span class="c-key">$</span> whoami</span></div>
+                <div class="code-line"><span class="code-num">3</span><span class="code-content"><span class="c-str">mad0@escom-core:~$ Software & Systems Builder</span></span></div>
+                <div class="code-line"><span class="code-num">4</span><span class="code-content"><span class="c-key">$</span> ./inspect_projects.sh</span></div>
+                <div class="code-line"><span class="code-num">5</span><span class="code-content"><span class="c-bool">[OK]</span> VendorVision (Web Platform &amp; Real-Time)</span></div>
+                <div class="code-line"><span class="code-num">6</span><span class="code-content"><span class="c-bool">[OK]</span> XtrackMachine (Industrial Automation)</span></div>
+                <div class="code-line"><span class="code-num">7</span><span class="code-content"><span class="c-bool">[OK]</span> EraserBot (AI-Powered Classroom Hardware)</span></div>
+                <div class="code-line"><span class="code-num">8</span><span class="code-content"><span class="c-key">$</span> echo $STATUS</span></div>
+                <div class="code-line"><span class="code-num">9</span><span class="code-content"><span class="c-num">Ready to collaborate and build high-impact tech.</span></span></div>
+              </div>
+            </div>
+
+            <!-- Footer de la consola -->
+            <div class="console-status-footer">
+              <span class="status-indicator-live">
+                <iconify-icon icon="lucide:activity" style="font-size: 13px;" aria-hidden="true"></iconify-icon>
+                SISTEMA OPERATIVO Y DISPONIBLE
+              </span>
+              <span>UTF-8 // 0 ERRORS</span>
+            </div>
           </div>
 
-          <!-- CTAs -->
-          <div class="hero-cta">
-            <a href="projects.html" class="btn btn-primary">
-              <span>Ver Proyectos</span>
-              <iconify-icon icon="lucide:arrow-right" style="font-size: 16px;"></iconify-icon>
-            </a>
-
-            <a href="assets/CV%20Jos%C3%A9%20Antonio%20Mart%C3%ADnez%20Casta%C3%B1%C3%B3n.pdf"
-              download="CV José Antonio Martínez Castañón.pdf" class="btn btn-secondary action-download-cv">
-              <iconify-icon icon="lucide:file-text" style="font-size: 16px;"></iconify-icon>
-              <span>Descargar Curriculum (PDF)</span>
-            </a>
-
-            <a href="contact.html" class="btn btn-outline-blue">
-              <span>Contactar</span>
-            </a>
-          </div>
         </div>
       </div>
     </section>
 
-    <!-- ================= Educación Section ================= -->
+    <!-- ================= Educación Section (Roadmap Timeline) ================= -->
     <section id="educacion" class="section">
       <div class="container">
-        <div class="section-header reveal">
-          <span class="section-label">Formación Académica</span>
-          <h2 class="section-title">Educación</h2>
-          <p class="section-desc">Trayectoria académica en instituciones líderes del Instituto Politécnico Nacional.</p>
+        <div class="section-header gsap-reveal">
+          <span class="section-label">Trayectoria Académica</span>
+          <h2 class="section-title">Formación Académica</h2>
+          <p class="section-desc">Especialización técnica e ingeniería en las instituciones insignia del Instituto Politécnico Nacional.</p>
         </div>
 
-        <div class="education-grid">
-          <!-- Card ESCOM -->
-          <div class="edu-card reveal">
-            <div>
+        <div class="timeline-wrapper">
+          <!-- Línea vertical animada -->
+          <div class="timeline-track" aria-hidden="true"></div>
+
+          <!-- Timeline Item 1: ESCOM -->
+          <div class="timeline-item gsap-reveal">
+            <div class="timeline-node active-node" aria-hidden="true"></div>
+            <div class="timeline-card">
               <div class="edu-header">
-                <h3 class="edu-institution">Escuela Superior de Cómputo (ESCOM)</h3>
-                <span class="badge badge-active">En curso</span>
+                <div>
+                  <h3 class="edu-institution">Escuela Superior de Cómputo (ESCOM)</h3>
+                  <p class="edu-ipn-sub">
+                    <iconify-icon icon="lucide:graduation-cap" style="font-size: 15px; color: var(--accent-red);" aria-hidden="true"></iconify-icon>
+                    Instituto Politécnico Nacional
+                  </p>
+                </div>
+                <span class="badge badge-active">En curso · 2026 – 2030</span>
               </div>
-              <p style="color: var(--text-muted); font-size: 0.88rem; margin-bottom: 8px;">Instituto Politécnico
-                Nacional</p>
+              
               <h4 class="edu-degree">Ingeniería en Sistemas Computacionales</h4>
-              <p style="color: var(--text-secondary); font-size: 0.92rem;">
-                Formación en ingeniería de software avanzada, arquitectura de sistemas, diseño algorítmico y tecnologías
-                computacionales de vanguardia.
+              <p style="color: var(--text-secondary); font-size: 0.94rem; line-height: 1.65;">
+                Formación integral en arquitectura de software de alto rendimiento, algoritmia avanzada, computación distribuida, diseño de sistemas embebidos e inteligencia artificial aplicada.
               </p>
-            </div>
-            <div class="edu-meta">
-              <span>📅 2026 – 2030</span>
-              <span>📍 Ciudad de México, México</span>
+
+              <div class="edu-meta">
+                <span>📅 2026 – 2030</span>
+                <span>📍 Ciudad de México, México</span>
+                <span>🎯 Nivel Superior</span>
+              </div>
             </div>
           </div>
 
-          <!-- Card Bátiz -->
-          <div class="edu-card reveal">
-            <div>
+          <!-- Timeline Item 2: CECyT 9 Bátiz -->
+          <div class="timeline-item gsap-reveal">
+            <div class="timeline-node" aria-hidden="true"></div>
+            <div class="timeline-card">
               <div class="edu-header">
-                <h3 class="edu-institution">CECyT 9 "Juan de Dios Bátiz"</h3>
-                <span class="badge badge-done">Concluido</span>
+                <div>
+                  <h3 class="edu-institution">CECyT 9 "Juan de Dios Bátiz"</h3>
+                  <p class="edu-ipn-sub">
+                    <iconify-icon icon="lucide:award" style="font-size: 15px; color: var(--accent-blue);" aria-hidden="true"></iconify-icon>
+                    Instituto Politécnico Nacional
+                  </p>
+                </div>
+                <span class="badge badge-done">Concluido · 2024 – 2025</span>
               </div>
-              <p style="color: var(--text-muted); font-size: 0.88rem; margin-bottom: 8px;">Instituto Politécnico
-                Nacional</p>
+
               <h4 class="edu-degree">Técnico en Programación</h4>
-              <p style="color: var(--text-secondary); font-size: 0.92rem;">
-                Bases sólidas en lógica algorítmica, paradigmas de programación (POO, estructurada), bases de datos
-                relacionales y desarrollo de aplicaciones.
+              <p style="color: var(--text-secondary); font-size: 0.94rem; line-height: 1.65;">
+                Fundamentos sólidos en programación orientada a objetos (POO), modelado relacional y bases de datos SQL, desarrollo de aplicaciones desktop y web con control de versiones.
               </p>
-            </div>
-            <div class="edu-meta">
-              <span>📅 2024 – 2025</span>
-              <span>📍 Ciudad de México, México</span>
+
+              <div class="edu-meta">
+                <span>📅 2024 – 2025</span>
+                <span>📍 Ciudad de México, México</span>
+                <span>🎯 Nivel Medio Superior Técnico</span>
+              </div>
             </div>
           </div>
+
         </div>
       </div>
     </section>
 
-    <!-- ================= Habilidades Section ================= -->
+    <!-- ================= Habilidades Section (Interactive Filter) ================= -->
     <section id="habilidades" class="section">
       <div class="container">
-        <div class="section-header reveal">
-          <span class="section-label">Stack & Competencias</span>
+        <div class="section-header gsap-reveal">
+          <span class="section-label">Competencias & Stack</span>
           <h2 class="section-title">Habilidades Técnicas y Competenciales</h2>
-          <p class="section-desc">Conjunto de tecnologías, herramientas, metodologías e idiomas aplicados en proyectos
-            reales.</p>
+          <p class="section-desc">Tecnologías, metodologías y habilidades interpersonales consolidadas a lo largo de proyectos y certámenes.</p>
+        </div>
+
+        <!-- Filtros interactivos -->
+        <div class="skills-filter-nav gsap-reveal" role="tablist" aria-label="Filtro de habilidades">
+          <button class="skills-filter-btn active" data-filter="all" type="button">Todas las Habilidades</button>
+          <button class="skills-filter-btn" data-filter="languages" type="button">Lenguajes</button>
+          <button class="skills-filter-btn" data-filter="backend" type="button">Backend & APIs</button>
+          <button class="skills-filter-btn" data-filter="frontend" type="button">Frontend & Diseño</button>
+          <button class="skills-filter-btn" data-filter="databases" type="button">Bases de Datos</button>
+          <button class="skills-filter-btn" data-filter="tools" type="button">Herramientas</button>
+          <button class="skills-filter-btn" data-filter="soft" type="button">Competenciales</button>
         </div>
 
         <div class="skills-container">
           <!-- Lenguajes -->
-          <div class="skill-category-card reveal">
+          <div class="skill-category-card gsap-reveal" data-category="languages">
             <div class="skill-cat-header">
-              <div class="skill-cat-icon">
-                <iconify-icon icon="lucide:code" style="font-size: 20px; color: var(--accent-red);"></iconify-icon>
+              <div class="skill-cat-title-group">
+                <div class="skill-cat-icon">
+                  <iconify-icon icon="lucide:code-2" style="font-size: 20px; color: var(--accent-red);" aria-hidden="true"></iconify-icon>
+                </div>
+                <h3 class="skill-cat-title">Lenguajes</h3>
               </div>
-              <h3 class="skill-cat-title">Lenguajes</h3>
+              <span class="badge badge-done">4 Lenguajes</span>
             </div>
             <div class="skill-chips">
-              <span class="skill-chip accent-red">Python</span>
               <span class="skill-chip accent-red">Java</span>
-              <span class="skill-chip accent-red">C++</span>
-              <span class="skill-chip accent-red">C</span>
+              <span class="skill-chip accent-red">Python</span>
+              <span class="skill-chip accent-red">C / C++</span>
               <span class="skill-chip accent-red">JavaScript</span>
             </div>
           </div>
 
           <!-- Backend -->
-          <div class="skill-category-card reveal">
+          <div class="skill-category-card gsap-reveal" data-category="backend">
             <div class="skill-cat-header">
-              <div class="skill-cat-icon">
-                <iconify-icon icon="lucide:server" style="font-size: 20px; color: var(--accent-blue);"></iconify-icon>
+              <div class="skill-cat-title-group">
+                <div class="skill-cat-icon">
+                  <iconify-icon icon="lucide:server" style="font-size: 20px; color: var(--accent-blue);" aria-hidden="true"></iconify-icon>
+                </div>
+                <h3 class="skill-cat-title">Backend & APIs</h3>
               </div>
-              <h3 class="skill-cat-title">Backend & APIs</h3>
+              <span class="badge badge-done">Arquitectura</span>
             </div>
             <div class="skill-chips">
               <span class="skill-chip">Node.js</span>
               <span class="skill-chip">Flask</span>
               <span class="skill-chip">API REST</span>
+              <span class="skill-chip">Microservicios</span>
             </div>
           </div>
 
           <!-- Frontend -->
-          <div class="skill-category-card reveal">
+          <div class="skill-category-card gsap-reveal" data-category="frontend">
             <div class="skill-cat-header">
-              <div class="skill-cat-icon">
-                <iconify-icon icon="lucide:layout" style="font-size: 20px; color: var(--accent-cyan);"></iconify-icon>
+              <div class="skill-cat-title-group">
+                <div class="skill-cat-icon">
+                  <iconify-icon icon="lucide:layout" style="font-size: 20px; color: var(--accent-cyan);" aria-hidden="true"></iconify-icon>
+                </div>
+                <h3 class="skill-cat-title">Frontend & Diseño</h3>
               </div>
-              <h3 class="skill-cat-title">Frontend & Diseño</h3>
+              <span class="badge badge-done">UI / UX</span>
             </div>
             <div class="skill-chips">
               <span class="skill-chip">HTML5</span>
-              <span class="skill-chip">CSS3</span>
+              <span class="skill-chip">CSS3 Avanzado</span>
               <span class="skill-chip">JavaScript (ES6+)</span>
               <span class="skill-chip">Figma</span>
             </div>
           </div>
 
           <!-- Bases de Datos -->
-          <div class="skill-category-card reveal">
+          <div class="skill-category-card gsap-reveal" data-category="databases">
             <div class="skill-cat-header">
-              <div class="skill-cat-icon">
-                <iconify-icon icon="lucide:database" style="font-size: 20px; color: #a855f7;"></iconify-icon>
+              <div class="skill-cat-title-group">
+                <div class="skill-cat-icon">
+                  <iconify-icon icon="lucide:database" style="font-size: 20px; color: var(--accent-purple);" aria-hidden="true"></iconify-icon>
+                </div>
+                <h3 class="skill-cat-title">Bases de Datos & Análisis</h3>
               </div>
-              <h3 class="skill-cat-title">Bases de Datos & Análisis</h3>
+              <span class="badge badge-done">Almacenamiento</span>
             </div>
             <div class="skill-chips">
               <span class="skill-chip">MySQL</span>
               <span class="skill-chip">MongoDB</span>
-              <span class="skill-chip">Pandas</span>
-              <span class="skill-chip">NumPy</span>
-              <span class="skill-chip">Matplotlib</span>
-              <span class="skill-chip">R</span>
-              <span class="skill-chip">Excel</span>
-              <span class="skill-chip">Power BI</span>
+              <span class="skill-chip">Modelado Relacional</span>
             </div>
           </div>
 
           <!-- Herramientas -->
-          <div class="skill-category-card reveal">
+          <div class="skill-category-card gsap-reveal" data-category="tools">
             <div class="skill-cat-header">
-              <div class="skill-cat-icon">
-                <iconify-icon icon="lucide:wrench" style="font-size: 20px; color: #34d399;"></iconify-icon>
+              <div class="skill-cat-title-group">
+                <div class="skill-cat-icon">
+                  <iconify-icon icon="lucide:wrench" style="font-size: 20px; color: var(--accent-emerald);" aria-hidden="true"></iconify-icon>
+                </div>
+                <h3 class="skill-cat-title">Herramientas & Entornos</h3>
               </div>
-              <h3 class="skill-cat-title">Herramientas & Entornos</h3>
+              <span class="badge badge-done">DevOps / CLI</span>
             </div>
             <div class="skill-chips">
               <span class="skill-chip">Git</span>
@@ -275,18 +397,20 @@
               <span class="skill-chip">VS Code</span>
               <span class="skill-chip">Antigravity</span>
               <span class="skill-chip">Claude Code</span>
-              <span class="skill-chip">OpenCode</span>
               <span class="skill-chip">Linux</span>
             </div>
           </div>
 
           <!-- Idiomas -->
-          <div class="skill-category-card reveal">
+          <div class="skill-category-card gsap-reveal" data-category="languages">
             <div class="skill-cat-header">
-              <div class="skill-cat-icon">
-                <iconify-icon icon="lucide:globe" style="font-size: 20px; color: #f59e0b;"></iconify-icon>
+              <div class="skill-cat-title-group">
+                <div class="skill-cat-icon">
+                  <iconify-icon icon="lucide:languages" style="font-size: 20px; color: #f59e0b;" aria-hidden="true"></iconify-icon>
+                </div>
+                <h3 class="skill-cat-title">Idiomas</h3>
               </div>
-              <h3 class="skill-cat-title">Idiomas</h3>
+              <span class="badge badge-done">Comunicación</span>
             </div>
             <div class="skill-chips">
               <span class="skill-chip">Español (Nativo)</span>
@@ -295,30 +419,35 @@
           </div>
         </div>
 
-        <!-- Habilidades Competenciales / Soft Skills -->
-        <div class="leadership-banner reveal" style="margin-top: 36px; padding: 28px;">
-          <h3
-            style="font-size: 1.15rem; font-weight: 700; color: var(--text-highlight); margin-bottom: 16px; display: flex; align-items: center; gap: 8px;">
-            <span style="color: var(--accent-red);">✦</span> Habilidades Competenciales & Liderazgo
-          </h3>
+        <!-- Habilidades Competenciales -->
+        <div class="leadership-banner gsap-reveal" data-category="soft" style="margin-top: 36px;">
+          <div class="leadership-header">
+            <div>
+              <div class="leadership-award-title">
+                <iconify-icon icon="lucide:sparkles" style="color: var(--accent-red);" aria-hidden="true"></iconify-icon>
+                <span>Habilidades Competenciales & Liderazgo</span>
+              </div>
+              <p class="leadership-role">Competencias blandas demostradas en la dirección y ejecución de proyectos</p>
+            </div>
+          </div>
+
           <div class="skill-chips">
             <span class="skill-chip">Trabajo en equipo</span>
-            <span class="skill-chip">Liderazgo</span>
+            <span class="skill-chip">Liderazgo de proyectos</span>
             <span class="skill-chip">Gestión de proyectos y tiempo</span>
-            <span class="skill-chip">Adaptabilidad</span>
-            <span class="skill-chip">Resolución de problemas</span>
+            <span class="skill-chip">Adaptabilidad a nuevos entornos</span>
+            <span class="skill-chip">Resolución analítica de problemas</span>
             <span class="skill-chip">Creatividad e innovación</span>
-            <span class="skill-chip">Capacidad de aprendizaje</span>
+            <span class="skill-chip">Capacidad de aprendizaje continuo</span>
           </div>
         </div>
 
         <!-- Call to Action a Proyectos -->
-        <div style="text-align: center; margin-top: 50px;" class="reveal">
-          <p style="color: var(--text-secondary); margin-bottom: 16px;">¿Quieres conocer las soluciones tecnológicas que
-            he implementado?</p>
+        <div style="text-align: center; margin-top: 55px;" class="gsap-reveal">
+          <p style="color: var(--text-secondary); margin-bottom: 16px;">¿Deseas examinar el código y arquitectura de las soluciones implementadas?</p>
           <a href="projects.html" class="btn btn-primary">
-            <span>Explorar Proyectos y Experiencia</span>
-            <iconify-icon icon="lucide:arrow-right" style="font-size: 16px;"></iconify-icon>
+            <span>Ver Portafolio de Proyectos</span>
+            <iconify-icon icon="lucide:arrow-right" style="font-size: 16px;" aria-hidden="true"></iconify-icon>
           </a>
         </div>
       </div>
@@ -329,16 +458,16 @@
   <footer class="site-footer">
     <div class="container footer-content">
       <div>
-        <p style="font-weight: 600; color: var(--text-highlight);">José Antonio Martínez Castañón</p>
-        <p style="font-size: 0.82rem;">Estudiante de Ingeniería en Sistemas Computacionales · ESCOM IPN</p>
+        <p style="font-weight: 700; color: var(--text-highlight); font-size: 0.98rem;">José Antonio Martínez Castañón</p>
+        <p style="font-size: 0.84rem; color: var(--text-muted);">Estudiante de Ingeniería en Sistemas Computacionales · ESCOM IPN</p>
       </div>
       <div class="footer-links">
-        <a href="https://github.com/Mad065" target="_blank" rel="noopener noreferrer">GitHub</a>
-        <a href="https://www.linkedin.com/in/jose-martinez-0a0034208/" target="_blank"
-          rel="noopener noreferrer">LinkedIn</a>
+        <a href="index.html">Inicio</a>
         <a href="projects.html">Proyectos</a>
+        <a href="https://github.com/Mad065" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://www.linkedin.com/in/jose-martinez-0a0034208/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
         <a href="contact.html">Contacto</a>
-        <a href="#top" style="color: var(--accent-red);">↑ Arriba</a>
+        <a href="#main-content" style="color: var(--accent-red);">↑ Arriba</a>
       </div>
     </div>
   </footer>
